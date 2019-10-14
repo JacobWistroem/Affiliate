@@ -1,0 +1,38 @@
+.bg-light{
+    background-color: #80deea!important;
+}
+.jumbotron-pos {
+    margin-top: 75px;
+}
+.jumbotron{
+    background-color: #EEEEEE;
+}
+.btn-primary {
+    /*background-color: #4aacb8;
+    border-color: #4aacb8;*/
+    background-color: #80deea;
+    border-color: #80deea;
+    color: #000000;
+}
+.btn-primary:hover {
+    /*background-color: #4aacb8;
+    border-color: #4aacb8;*/
+    background-color: hsl(212, 72%, 71%);
+    border-color: hsl(212, 72%, 71%);
+    color: #000000;
+}
+#headlineline {
+    margin-top: 0px; 
+    margin-bottom: 10px; 
+    border-color: #80deea;
+}
+
+#endingline {
+    margin-top: 35px; 
+    margin-bottom: 35px;
+}
+
+#footerline {
+    margin-top: 50px; 
+    margin-bottom: 50px;
+}
