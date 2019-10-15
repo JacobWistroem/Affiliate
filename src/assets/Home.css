@@ -1,5 +1,5 @@
 .bg-light{
-    background-color: #80deea!important;
+    background-color: #1565c0!important;
 }
 .jumbotron-pos {
     margin-top: 75px;
@@ -10,16 +10,16 @@
 .btn-primary {
     /*background-color: #4aacb8;
     border-color: #4aacb8;*/
-    background-color: #80deea;
-    border-color: #80deea;
-    color: #000000;
+    background-color: #1565c0;
+    border-color: #1565c0;
+    color: white;
 }
 .btn-primary:hover {
     /*background-color: #4aacb8;
     border-color: #4aacb8;*/
     background-color: hsl(212, 72%, 71%);
     border-color: hsl(212, 72%, 71%);
-    color: #000000;
+    color: white;
 }
 #headlineline {
     margin-top: 0px; 

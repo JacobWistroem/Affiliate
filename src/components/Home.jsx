@@ -26,42 +26,42 @@ class Home extends React.Component {
         return (
     <div>
         <header>
-            <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar fixed-top navbar-expand-lg navbar-dark  bg-light">
                 <div className="container">
-                <a className="navbar-brand" href="#">
-                <i className="fas fa-search-dollar" width="100" height="100"></i>
-                SEO Tool Selector
-                </a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                <li className="nav-item active">
-                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Browse</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">SEO Test</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">About us</a>
-                </li>
-                </ul>
-            </div>
+                    <Link to="/" className="navbar-brand" href="#">
+                        <i className="fas fa-search-dollar" width="100" height="100"></i>
+                        SEO Tool Selector
+                    </Link>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav">
+                        <li className="nav-item active">
+                            <Link to="/" className="nav-link" href="#">Home <span className="sr-only">(current)</span></Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/browse" className="nav-link" href="#">Browse</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/test" className="nav-link" href="#">SEO Test</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/aboutus" className="nav-link" href="#">About us</Link>
+                        </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </header>
         
         <div className="container">
             <div className="jumbotron jumbotron-pos">
-            <h1 className="display-4">SEO Tool Selector - Take the test!</h1>
-            <p className="lead">This is a simple test that will select a SEO provider who support your demands</p>
-            <hr className="my-4"/>
-            <p>It will only take 5 minuts to complete, follow the link to continue.</p>
-            <a className="btn btn-primary btn-lg" href="#" role="button">Take the test!</a>
+                <h1 className="display-4">SEO Tool Selector - Take the test!</h1>
+                <p className="lead">This is a simple test that will select a SEO provider who support your demands</p>
+                <hr class="my-4"/>
+                <p>It will only take 5 min.</p>
+                <a className="btn btn-primary btn-lg" href="#" role="button">Take the test!</a>
             </div>
             <div>
                 <h3>Features</h3>
