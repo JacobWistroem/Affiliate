@@ -11,24 +11,74 @@ import card4 from '../assets/Cards/example4.jpg';
 class Browse extends React.Component {
     constructor() {
         super()
+        this.state = {
+            Providers: [],
+        }
     }
         
 
     componentWillMount() {
-            
+        this.loadDatabase();
     }
 
-    functionName = () => {
-
+    loadDatabase = () => {
+        fetch('http://localhost:3001/api/read', {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Request-App': 'Affiliate',
+            }
+        }).then(function (response) {
+            return response.json();
+        },error => {
+            console.log(error);
+            console.log("didnt work, step1")
+        }).then((response) => {
+            //Delivers the response to the state as a array
+            this.setState({ Providers: response });
+        },error => {
+            console.log(error);
+            console.log("didnt work, step2")
+        });
     }
 
     render() {
+        console.log(this.state.Providers)
+        var Providerlist;
+        if(this.state.Providers != undefined){
+        Providerlist = this.state.Providers.map(Li => {
+            const element = <li key={Li.Id}>
+                <div className="card mb-3">
+                    <div className="row no-gutters">
+                        <div className="col-md-4">
+                            <img src={card4} className="card-img" alt="..."/>
+                        </div>
+                        <div className="col-md-8">
+                            <div className="card-body">
+                                <h5 className="card-title">{Li.Name}</h5>
+                                <p className="card-text">{Li.Description}</p>
+                                <p className="card-text"><small className="text-muted">Last updated {Li.Date}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </li>
+            //Returns the list components with information from state
+            return element
+            })    
+        } else {
+            Providerlist = <li><div class="alert alert-danger" role="alert">
+            An error has occured
+          </div></li>;
+        }                  
+
         return (
     <div>
         <header>
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark  bg-light">
                 <div className="container">
-                    <Link to="/" className="navbar-brand" href="#">
+                    <Link to="http://localhost:3000/" className="navbar-brand" href="#">
                         <i className="fas fa-search-dollar" width="100" height="100"></i>
                     SEO Tool Selector
                     </Link>
@@ -38,16 +88,16 @@ class Browse extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link to="/" className="nav-link" href="#">Home <span className="sr-only">(current)</span></Link>
+                            <Link to="http://localhost:3000/" className="nav-link" href="#">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item active">
-                            <Link to="/browse" className="nav-link" href="#">Browse</Link>
+                            <Link to="http://localhost:3000/browse" className="nav-link" href="#">Browse</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/test" className="nav-link" href="#">SEO Test</Link>
+                            <Link to="http://localhost:3000/test" className="nav-link" href="#">SEO Test</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/aboutus" className="nav-link" href="#">About us</Link>
+                            <Link to="http://localhost:3000/aboutus" className="nav-link" href="#">About us</Link>
                         </li>
                         </ul>
                     </div>
@@ -166,13 +216,14 @@ class Browse extends React.Component {
                             </div>
                         </div>
                     </div>
+                    {Providerlist}
                 </div>
             </div>
         </div>
         <footer className="container" id="footerline">
             <hr className="hrline" id="endingline"/>
-            <p className="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2019 CompanyName, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <p className="float-right"><a href="http://localhost:3000/browse">Back to top</a></p>
+            <p>&copy; 2019 CompanyName, Inc. &middot; <a href="http://localhost:3000/Privacy">Privacy</a> &middot; <a href="http://localhost:3000/Terms">Terms</a></p>
         </footer>
     </div>
         );
