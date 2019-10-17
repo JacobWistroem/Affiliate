@@ -78,7 +78,7 @@ class Browse extends React.Component {
         <header>
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark  bg-light">
                 <div className="container">
-                    <Link to="http://localhost:3000/" className="navbar-brand" href="#">
+                    <Link to="/" className="navbar-brand" href="#">
                         <i className="fas fa-search-dollar" width="100" height="100"></i>
                     SEO Tool Selector
                     </Link>
@@ -88,16 +88,16 @@ class Browse extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link to="http://localhost:3000/" className="nav-link" href="#">Home <span className="sr-only">(current)</span></Link>
+                            <Link to="/" className="nav-link">Home <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item active">
-                            <Link to="http://localhost:3000/browse" className="nav-link" href="#">Browse</Link>
+                            <Link to="/Browse" className="nav-link" href="#">Browse</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="http://localhost:3000/test" className="nav-link" href="#">SEO Test</Link>
+                            <Link to="/test" className="nav-link" href="#">SEO Test</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="http://localhost:3000/aboutus" className="nav-link" href="#">About us</Link>
+                            <Link to="aboutus" className="nav-link" href="#">About us</Link>
                         </li>
                         </ul>
                     </div>
